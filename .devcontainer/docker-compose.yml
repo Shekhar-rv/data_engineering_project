@@ -1,0 +1,41 @@
+version: "3.9"
+networks:
+  default:
+    name: local
+    external: true
+
+services:
+
+  postgres:
+    container_name: postgres
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: dev
+    networks:
+      - default
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  de_project:
+    container_name: de_project
+    build:
+      dockerfile: ./.devcontainer/Dockerfile.de_project
+      context: ../
+    volumes:
+      - ../../:/de_project
+    networks:
+      - default
+    tty: true
+    environment:
+      - AWS_ENDPOINT=http://host.docker.internal:4566
+      - POSTGRES_URI=postgresql://postgres:dev@postgres:5432/dev?schema=public
+      - ENVIRONMENT=local
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
