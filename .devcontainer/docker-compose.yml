@@ -11,7 +11,7 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: dev
-      POSTGRES_DB: dev
+      POSTGRES_DB: data_pipeline
     networks:
       - default
     ports:
@@ -21,6 +21,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    volumes:
+      - ./sql-init:/docker-entrypoint-initdb.d/
 
   python:
     container_name: python
@@ -35,7 +37,7 @@ services:
       - default
     tty: true
     environment:
-      - POSTGRES_URI=postgresql://postgres:dev@postgres:5432/dev?schema=public
+      - POSTGRES_URI=postgresql://postgres:dev@postgres:5432/data_pipeline?schema=public
       - ENVIRONMENT=local
     extra_hosts:
       - "host.docker.internal:host-gateway"
