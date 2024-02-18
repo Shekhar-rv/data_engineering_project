@@ -1,0 +1,5 @@
+{
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "python",
+    "workspaceFolder": "/de_project"
+}

@@ -5,8 +5,8 @@ RUN apt-get update
 RUN mkdir -p /de_project
 WORKDIR /de_project
 
-COPY ./requirements.txt /de_project/app/requirements.txt
-RUN pip install --upgrade pip && pip install -r /de_project/app/requirements.txt
+COPY ./requirements.txt /de_project/requirements.txt
+RUN pip install --upgrade pip && pip install -r /de_project/requirements.txt
 
 RUN pip install pylint==2.16.2 sqlfluff==1.4.5 parameterized==0.9.0 pycodestyle==2.10.0 snapshottest==0.6.0 coverage==7.2.7
 

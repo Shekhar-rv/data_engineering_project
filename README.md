@@ -8,3 +8,9 @@ https://medium.com/@darshilp/7-end-to-end-data-engineering-projects-for-free-bf9
 
 In this repo I'm trying to include a dev container which would potentially help develop a developer setup a local environment that is supported on all major platforms. This includes:
   1. Docker containers that run python and postgres at the moment.
+
+
+# TODO
+  1. Setup necessary packages on devcontainer
+  2. Test if postgres is accessed from python
+  3. Create a schema and tables

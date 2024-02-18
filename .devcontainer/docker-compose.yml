@@ -5,7 +5,6 @@ networks:
     external: true
 
 services:
-
   postgres:
     container_name: postgres
     image: postgres:13
@@ -23,18 +22,19 @@ services:
       timeout: 5s
       retries: 5
 
-  de_project:
-    container_name: de_project
+  python:
+    container_name: python
+    depends_on:
+      - postgres
     build:
       dockerfile: ./.devcontainer/Dockerfile.de_project
       context: ../
     volumes:
-      - ../../:/de_project
+      - ../:/de_project/
     networks:
       - default
     tty: true
     environment:
-      - AWS_ENDPOINT=http://host.docker.internal:4566
       - POSTGRES_URI=postgresql://postgres:dev@postgres:5432/dev?schema=public
       - ENVIRONMENT=local
     extra_hosts:
