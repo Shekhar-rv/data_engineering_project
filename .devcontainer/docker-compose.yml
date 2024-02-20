@@ -1,8 +1,4 @@
 version: "3.9"
-networks:
-  default:
-    name: local
-    external: true
 
 services:
   postgres:
@@ -10,7 +6,8 @@ services:
     image: postgres:13
     restart: always
     environment:
-      POSTGRES_PASSWORD: dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: data_pipeline
     networks:
       - default
@@ -22,7 +19,8 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - ./sql-init:/docker-entrypoint-initdb.d/
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      # - ./db:/var/lib/postgresql/data
 
   python:
     container_name: python
@@ -41,3 +39,6 @@ services:
       - ENVIRONMENT=local
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
+networks:
+  default:

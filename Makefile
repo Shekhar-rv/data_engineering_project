@@ -14,10 +14,18 @@ help:
 	@echo ""
 	@echo "${BOLD}${PURPLE}This repository is to learn more about Data Engineering Projects"
 	@echo ""
-	@echo "${RED}Please following the setup process in the README.md file. ${NONE}"
+	@echo "${YELLOW}Please following the setup process in the README.md file. ${NONE}"
+	@echo ""
+	@echo "${CYAN}Run the any of the following commands: ${NONE}"
+	@echo ""
+	@echo "${GREEN}run-code : Runs the main.py script ${NONE}"
 	@echo ""
 
+run-code:
+	@echo "${BOLD}${GREEN}Running the main.py script ${NONE}"
+	python src/main.py
+
 #TODO
-# 1. How to open a dev container
-# 2. How to run the code
+# 1. How to open a dev container - Done
+# 2. How to run the code - Done
 # 3. How to run the tests
