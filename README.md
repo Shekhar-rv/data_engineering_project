@@ -20,4 +20,5 @@ In this repo I'm trying to include a dev container which would potentially help 
   2. Create a schema and tables
   3. Start the course to see if you were able to take into account the requirements.
   4. Add setup instructions.
-  5. Set up .env file to handle postgres credentials and pass in the postgres uri to the python image. 
+  5. Set up .env file to handle postgres credentials and pass in the postgres uri to the python image.
+  6. Continue the course for god sake SHEKHAR!!!
