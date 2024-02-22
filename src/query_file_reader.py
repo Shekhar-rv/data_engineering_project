@@ -6,6 +6,8 @@ class QueryFileReader:
     """
     def __init__(self) -> None:
 
-        # Postgres select
-        with open("sql_queries/postgres/select/get_shop_data.sql", "r") as f:
-            self.get_shop_data_query = f.read()
+        # Postgres create
+        with open("src/sql_queries/create_shop_data.sql", "r") as f:
+            self.create_shop_data_query = f.read()
+
+# /de_project/src/sql_queries/create_shop_data.sql

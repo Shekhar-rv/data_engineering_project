@@ -10,6 +10,8 @@ def get_pg_connection(postgres_uri: str) -> connection:
         print("Establishing connection...")
         pg_uri = postgres_uri.split("?schema")[0]
         print(pg_uri)
+        
         postgres_connection = connect(pg_uri)
+        postgres_connection.autocommit = True
         print("Connection established!")
     return postgres_connection

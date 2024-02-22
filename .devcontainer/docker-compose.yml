@@ -35,7 +35,7 @@ services:
       - default
     tty: true
     environment:
-      - POSTGRES_URI=postgresql://postgres:dev@postgres:5432/data_pipeline?schema=public
+      - POSTGRES_URI=postgresql://postgres:postgres@172.19.0.2:5432/data_pipeline?schema=public
       - ENVIRONMENT=local
     extra_hosts:
       - "host.docker.internal:host-gateway"
