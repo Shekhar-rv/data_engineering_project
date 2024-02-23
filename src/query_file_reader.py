@@ -9,5 +9,12 @@ class QueryFileReader:
         # Postgres create
         with open("src/sql_queries/create_shop_data.sql", "r") as f:
             self.create_shop_data_query = f.read()
+        
+        with open("src/sql_queries/create_students.sql", "r") as f:
+            self.create_students_query = f.read()
+
+        # Postgres populate
+        with open("src/sql_queries/populate_students.sql", "r") as f:
+            self.populate_students_query = f.read()
 
 # /de_project/src/sql_queries/create_shop_data.sql

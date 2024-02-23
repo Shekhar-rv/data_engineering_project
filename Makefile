@@ -26,6 +26,4 @@ run-code:
 	python src/main.py
 
 #TODO
-# 1. How to open a dev container - Done
-# 2. How to run the code - Done
-# 3. How to run the tests
+# 1. How to run the tests
