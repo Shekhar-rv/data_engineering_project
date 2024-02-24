@@ -6,6 +6,21 @@ I'm using this as a learning opportunity to work on a few data engineering proje
 https://medium.com/@darshilp/7-end-to-end-data-engineering-projects-for-free-bf9e86d7bfe0
 ```
 
+This repo will house 3 projects (with the possibility to expand).
+
+### Project 1:
+In this project the main aim is to identify an open source dataset and design a data model to ingest this data into postgres. The following are the requirements for the project:
+  1. Find datasets from any of the sites such as opendata, kaggle etc (links found in description of the youtube video).
+  2. Build a data model (minimum 3 tables).
+  3. Write python code to create the required tables.
+  4. Insert data from the files into the tables.
+
+I found a vehicle sales data from kaggle which I feel would be good dataset for this project. The data set can be found here (also saved under src/data/):
+
+```link
+https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data?resource=download
+```
+
 ## Prerequisite
   1. You should have docker installed on your local machine.
   2. An IDE for SQL, I personally use Dbeaver. You can add another service to the docker compose file such as PGAdmin which has a web UI.
